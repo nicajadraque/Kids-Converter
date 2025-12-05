@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Kids_Converter.MVVM.Views.ConverterView"
+             Title=""
+             NavigationPage.HasNavigationBar="False">
+
+
+    <ContentPage.Resources>
+        <Color x:Key="AppColor1">HotPink</Color>
+        <Color x:Key="AppColor2">Red</Color>
+        <Color x:Key="AppColor3">Yellow</Color>
+        <Color x:Key="AppColor4">Skyblue</Color>
+        <Color x:Key="TextColor">Black</Color>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="*,*">
+
+        <!--  TOP SECTION -->
+        <Grid 
+            Grid.Row="0"
+            BackgroundColor="{StaticResource AppColor1}">
+            <VerticalStackLayout
+                VerticalOptions="Center" 
+                Spacing="10">
+
+                <Entry
+                    FontSize="100"
+                    HorizontalTextAlignment="Center"
+                    TextColor="{StaticResource TextColor}"
+                    Keyboard="Numeric"
+                    Placeholder="0"/>
+
+                <Picker
+                    Title="Select Unit"
+                    HorizontalTextAlignment="Center"
+                    TextColor="{StaticResource TextColor}"
+                    SelectedIndexChanged="Picker_SelectedIndexChanged"/>
+            </VerticalStackLayout>
+        </Grid>
+
+
+        <!--  BOTTOM SECTION -->
+        <Grid Grid.Row="1" BackgroundColor="{StaticResource AppColor4}">
+            <VerticalStackLayout VerticalOptions="Center" Spacing="10">
+
+                <Label
+                    FontSize="100"
+                    HorizontalTextAlignment="Center"
+                    TextColor="{StaticResource TextColor}"
+                    Text="0.00"/>
+
+                <Picker
+                    Title="Select Unit"
+                    HorizontalTextAlignment="Center"
+                    TextColor="{StaticResource TextColor}"
+                    SelectedIndexChanged="Picker_SelectedIndexChanged"/>
+
+            </VerticalStackLayout>
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

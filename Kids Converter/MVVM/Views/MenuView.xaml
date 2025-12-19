@@ -3,231 +3,171 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Kids_Converter.MVVM.Views.MenuView"
-    Title="MenuView">
-
-
+    Title="MenuView"
+    BackgroundColor="White">
 
     <ContentPage.Resources>
         <Color x:Key="AppColor1">HotPink</Color>
         <Color x:Key="AppColor2">Red</Color>
         <Color x:Key="AppColor3">Yellow</Color>
-        <Color x:Key="AppColor4">Skyblue</Color>
+        <Color x:Key="AppColor4">SkyBlue</Color>
         <Color x:Key="TextColor">Black</Color>
     </ContentPage.Resources>
 
-    <Grid
-    ColumnDefinitions="*,*,*"
-    RowDefinitions="1*,3*,3*,3*">
+    <Grid RowDefinitions="Auto,*,*,*"
+          ColumnDefinitions="*,*,*"
+          Padding="10"
+          RowSpacing="10"
+          ColumnSpacing="10">
 
         <!-- HEADER -->
-        <Label
-        Grid.ColumnSpan="3"
-        Background="{StaticResource AppColor4}"
-        FontAttributes="Bold"
-        FontSize="Large"
-        HorizontalTextAlignment="Center"
-        VerticalTextAlignment="Center"
-        Text="-Kid-Converter-"
-        TextColor="{StaticResource TextColor}" />
+        <Label Grid.Row="0" Grid.ColumnSpan="3"
+               BackgroundColor="{StaticResource AppColor4}"
+               FontAttributes="Bold"
+               FontSize="Large"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               Text="-Kid-Converter-"
+               TextColor="{StaticResource TextColor}"
+               HeightRequest="60"/>
 
-        <!-- INFORMATION -->
-        <Grid 
-        Grid.Row="1"
-        Grid.Column="0" 
-        Padding="15" 
-        RowDefinitions=".7*, .3*" 
-        BackgroundColor="{StaticResource AppColor1}">
-
-            <Grid.GestureRecognizers>
+        <!-- ROW 1 -->
+        <Frame Grid.Row="1" Grid.Column="0"
+               BackgroundColor="{StaticResource AppColor1}"
+               BorderColor="Black"
+               CornerRadius="10"
+               HasShadow="False"
+               Margin="5">
+            <StackLayout Spacing="5" Padding="5">
+                <Image Source="speed.png" Aspect="AspectFit" VerticalOptions="FillAndExpand"/>
+                <Label Text="Information" HorizontalOptions="Center" TextColor="{StaticResource TextColor}"/>
+            </StackLayout>
+            <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-            </Grid.GestureRecognizers>
+            </Frame.GestureRecognizers>
+        </Frame>
 
-            <Image 
-            Source="speed.png"/>
-            <Label 
-            Grid.Row="1"
-            HorizontalOptions="Center" 
-            VerticalOptions="Center" 
-            TextColor="{StaticResource TextColor}" 
-            Text="Information"/>
-        </Grid>
-
-        <!-- VOLUME -->
-
-        <Grid 
-        Grid.Row="1" 
-          Grid.Column="1" 
-        Padding="15" 
-        RowDefinitions=".7*, .3*" 
-        BackgroundColor="{StaticResource AppColor3}">
-
-            <Grid.GestureRecognizers>
+        <Frame Grid.Row="1" Grid.Column="1"
+               BackgroundColor="{StaticResource AppColor3}"
+               BorderColor="Black"
+               CornerRadius="10"
+               HasShadow="False"
+               Margin="5">
+            <StackLayout Spacing="5" Padding="5">
+                <Image Source="cube.png" Aspect="AspectFit" VerticalOptions="FillAndExpand"/>
+                <Label Text="Volume" HorizontalOptions="Center" TextColor="{StaticResource TextColor}"/>
+            </StackLayout>
+            <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-            </Grid.GestureRecognizers>
+            </Frame.GestureRecognizers>
+        </Frame>
 
-            <Image 
-            Source="cube.png"/>
-            <Label
-            Grid.Row="1" 
-            HorizontalOptions="Center" 
-            VerticalOptions="Center" 
-            TextColor="{StaticResource TextColor}" 
-            Text="Volume"/>
-        </Grid>
-
-        <!-- LENGTH-->
-        <Grid 
-        Grid.Row="1" 
-        Grid.Column="2" 
-        Padding="15" 
-        RowDefinitions=".7*, .3*" 
-        BackgroundColor="{StaticResource AppColor2}">
-
-            <Grid.GestureRecognizers>
+        <Frame Grid.Row="1" Grid.Column="2"
+               BackgroundColor="{StaticResource AppColor2}"
+               BorderColor="Black"
+               CornerRadius="10"
+               HasShadow="False"
+               Margin="5">
+            <StackLayout Spacing="5" Padding="5">
+                <Image Source="ruler.png" Aspect="AspectFit" VerticalOptions="FillAndExpand"/>
+                <Label Text="Length" HorizontalOptions="Center" TextColor="{StaticResource TextColor}"/>
+            </StackLayout>
+            <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-            </Grid.GestureRecognizers>
+            </Frame.GestureRecognizers>
+        </Frame>
 
-            <Image 
-            Source="ruler.png"/>
-            <Label 
-            Grid.Row="1" 
-            HorizontalOptions="Center" 
-            VerticalOptions="Center" 
-            TextColor="{StaticResource TextColor}" 
-            Text="Length"/>
-        </Grid>
-
-        <!-- MASS -->
-        <Grid
-            Grid.Row="2" 
-            Grid.Column="0" 
-            Padding="15"
-            RowDefinitions=".7*, .3*"
-            BackgroundColor="{StaticResource AppColor3}">
-            
-            <Grid.GestureRecognizers>
+        <!-- ROW 2 -->
+        <Frame Grid.Row="2" Grid.Column="0"
+               BackgroundColor="{StaticResource AppColor3}"
+               BorderColor="Black"
+               CornerRadius="10"
+               HasShadow="False"
+               Margin="5">
+            <StackLayout Spacing="5" Padding="5">
+                <Image Source="mass.png" Aspect="AspectFit" VerticalOptions="FillAndExpand"/>
+                <Label Text="Mass" HorizontalOptions="Center" TextColor="{StaticResource TextColor}"/>
+            </StackLayout>
+            <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-            </Grid.GestureRecognizers>
+            </Frame.GestureRecognizers>
+        </Frame>
 
-            <Image 
-                Source="mass.png"/>
-            <Label 
-                Grid.Row="1" 
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                TextColor="{StaticResource TextColor}"
-                Text="Mass"/>
-        </Grid>
-
-        <!-- TEMPERATURE -->
-        <Grid Grid.Row="2"
-              Grid.Column="1" 
-              Padding="15"
-              RowDefinitions=".7*, .3*" 
-              BackgroundColor="{StaticResource AppColor1}">
-
-            <Grid.GestureRecognizers>
+        <Frame Grid.Row="2" Grid.Column="1"
+               BackgroundColor="{StaticResource AppColor1}"
+               BorderColor="Black"
+               CornerRadius="10"
+               HasShadow="False"
+               Margin="5">
+            <StackLayout Spacing="5" Padding="5">
+                <Image Source="temperature.png" Aspect="AspectFit" VerticalOptions="FillAndExpand"/>
+                <Label Text="Temperature" HorizontalOptions="Center" TextColor="{StaticResource TextColor}"/>
+            </StackLayout>
+            <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-            </Grid.GestureRecognizers>
+            </Frame.GestureRecognizers>
+        </Frame>
 
-            <Image 
-                Source="temperature.png"/>
-            <Label 
-                Grid.Row="1"
-                HorizontalOptions="Center" 
-                VerticalOptions="Center"
-                TextColor="{StaticResource TextColor}" 
-                Text="Temperature"/>
-        </Grid>
-
-        <!-- ENERGY -->
-
-        <Grid Grid.Row="2"
-              Grid.Column="2" 
-              Padding="15" 
-              RowDefinitions=".7*, .3*" 
-              BackgroundColor="{StaticResource AppColor4}">
-
-            <Grid.GestureRecognizers>
+        <Frame Grid.Row="2" Grid.Column="2"
+               BackgroundColor="{StaticResource AppColor4}"
+               BorderColor="Black"
+               CornerRadius="10"
+               HasShadow="False"
+               Margin="5">
+            <StackLayout Spacing="5" Padding="5">
+                <Image Source="fire.png" Aspect="AspectFit" VerticalOptions="FillAndExpand"/>
+                <Label Text="Energy" HorizontalOptions="Center" TextColor="{StaticResource TextColor}"/>
+            </StackLayout>
+            <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-            </Grid.GestureRecognizers>
+            </Frame.GestureRecognizers>
+        </Frame>
 
-            <Image 
-                Source="fire.png"/>
-            <Label 
-                Grid.Row="1" 
-                HorizontalOptions="Center" 
-                VerticalOptions="Center" 
-                TextColor="{StaticResource TextColor}" 
-                Text="Energy"/>
-        </Grid>
-
-        <!-- AREA -->
-        <Grid
-            Grid.Row="3" 
-              Grid.Column="0" 
-            Padding="15" 
-            RowDefinitions=".7*, .3*"
-            BackgroundColor="{StaticResource AppColor2}">
-
-            <Grid.GestureRecognizers>
+        <!-- ROW 3 -->
+        <Frame Grid.Row="3" Grid.Column="0"
+               BackgroundColor="{StaticResource AppColor2}"
+               BorderColor="Black"
+               CornerRadius="10"
+               HasShadow="False"
+               Margin="5">
+            <StackLayout Spacing="5" Padding="5">
+                <Image Source="measurement.png" Aspect="AspectFit" VerticalOptions="FillAndExpand"/>
+                <Label Text="Area" HorizontalOptions="Center" TextColor="{StaticResource TextColor}"/>
+            </StackLayout>
+            <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-            </Grid.GestureRecognizers>
+            </Frame.GestureRecognizers>
+        </Frame>
 
-            <Image 
-                Source="measurement.png"/>
-            <Label 
-                Grid.Row="1"
-                HorizontalOptions="Center" 
-                VerticalOptions="Center"
-                TextColor="{StaticResource TextColor}" 
-                Text="Area"/>
-        </Grid>
-
-        <!-- SPEED -->
-        <Grid 
-            Grid.Row="3" 
-            Grid.Column="1" 
-            Padding="15"
-            RowDefinitions=".7*, .3*"
-            BackgroundColor="{StaticResource AppColor4}">
-
-            <Grid.GestureRecognizers>
+        <Frame Grid.Row="3" Grid.Column="1"
+               BackgroundColor="{StaticResource AppColor4}"
+               BorderColor="Black"
+               CornerRadius="10"
+               HasShadow="False"
+               Margin="5">
+            <StackLayout Spacing="5" Padding="5">
+                <Image Source="fast.png" Aspect="AspectFit" VerticalOptions="FillAndExpand"/>
+                <Label Text="Speed" HorizontalOptions="Center" TextColor="{StaticResource TextColor}"/>
+            </StackLayout>
+            <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-            </Grid.GestureRecognizers>
+            </Frame.GestureRecognizers>
+        </Frame>
 
-            <Image
-                Source="fast.png"/>
-            <Label 
-                Grid.Row="1" 
-                HorizontalOptions="Center" 
-                VerticalOptions="Center" 
-                TextColor="{StaticResource TextColor}" 
-                Text="Speed"/>
-        </Grid>
-
-
-        <!-- DURATION -->
-        <Grid 
-            Grid.Row="3" 
-            Grid.Column="2" 
-            Padding="15" 
-            RowDefinitions=".7*, .3*" 
-            BackgroundColor="{StaticResource AppColor3}">
-
-            <Grid.GestureRecognizers>
+        <Frame Grid.Row="3" Grid.Column="2"
+               BackgroundColor="{StaticResource AppColor3}"
+               BorderColor="Black"
+               CornerRadius="10"
+               HasShadow="False"
+               Margin="5">
+            <StackLayout Spacing="5" Padding="5">
+                <Image Source="hourglass.png" Aspect="AspectFit" VerticalOptions="FillAndExpand"/>
+                <Label Text="Duration" HorizontalOptions="Center" TextColor="{StaticResource TextColor}"/>
+            </StackLayout>
+            <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-            </Grid.GestureRecognizers>
-
-            <Image 
-                Source="hourglass.png"/>
-            <Label 
-                Grid.Row="1" 
-                HorizontalOptions="Center" 
-                VerticalOptions="Center" 
-                TextColor="{StaticResource TextColor}" 
-                Text="Duration"/>
-        </Grid>
+            </Frame.GestureRecognizers>
+        </Frame>
 
     </Grid>
 </ContentPage>

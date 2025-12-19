@@ -1,13 +1,14 @@
-namespace Kids_Converter.MVVM.Views;
+using Kids_Converter.MVVM.Models; // import the namespace
+using static Kids_Converter.MVVM.Models.Measurement;
 
-public partial class ConverterView : ContentPage
+namespace Kids_Converter.MVVM.Views
 {
-	public ConverterView()
-	{
-		InitializeComponent();
-	}
-
-	private void Picker_SelectedIndexChanged(object sender, EventArgs e)
-	{
-	}
+    public partial class ConverterView : ContentPage
+    {
+        public ConverterView(MeasurementCategory category)
+        {
+            InitializeComponent();
+            BindingContext = new ConverterViewModel(category);
+        }
+    }
 }

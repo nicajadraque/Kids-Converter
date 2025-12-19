@@ -3,70 +3,56 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Kids_Converter.MVVM.Views.ConverterView"
              Title=""
+             BackgroundColor="White"
              NavigationPage.HasNavigationBar="False">
-
 
     <ContentPage.Resources>
         <Color x:Key="AppColor1">HotPink</Color>
         <Color x:Key="AppColor2">Red</Color>
         <Color x:Key="AppColor3">Yellow</Color>
-        <Color x:Key="AppColor4">Skyblue</Color>
+        <Color x:Key="AppColor4">SkyBlue</Color>
         <Color x:Key="TextColor">Black</Color>
     </ContentPage.Resources>
 
-    <Grid RowDefinitions="*,*">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="30">
 
-        <!--  TOP SECTION -->
-        <Grid 
-            Grid.Row="0"
-            BackgroundColor="{StaticResource AppColor1}">
-            <VerticalStackLayout
-                VerticalOptions="Center" 
-                Spacing="10">
+            <!-- FROM SECTION -->
+            <Frame BackgroundColor="{StaticResource AppColor1}" CornerRadius="10" Padding="15" HasShadow="True">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="From" FontSize="24" HorizontalOptions="Center" TextColor="White"/>
+                    <Entry
+            FontSize="36"
+            Text="{Binding FromValue}"
+            Keyboard="Numeric"
+            HorizontalTextAlignment="Center"/>
+                    <Picker
+            ItemsSource="{Binding FromMeasures}"
+            SelectedItem="{Binding CurrentFromMeasure}"
+            HeightRequest="40"
+               WidthRequest="300"
+            FontSize="16"/>
+                </VerticalStackLayout>
+            </Frame>
 
-                <Entry
-                    FontSize="100"
-                    HorizontalTextAlignment="Center"
-                    TextColor="{StaticResource TextColor}"
-                    Keyboard="Numeric"
-                    Placeholder="0"/>
+            <!-- TO SECTION -->
+            <Frame BackgroundColor="{StaticResource AppColor4}" CornerRadius="10" Padding="15" HasShadow="True">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="To" FontSize="24" HorizontalOptions="Center" TextColor="White"/>
+                    <Label
+            FontSize="36"
+            Text="{Binding ToValue}"
+            HorizontalTextAlignment="Center"/>
+                    <Picker
+            ItemsSource="{Binding ToMeasures}"
+            SelectedItem="{Binding CurrentToMeasure}"
+            HeightRequest="40"
+                        WidthRequest="300"
+            FontSize="16"/>
+                </VerticalStackLayout>
+            </Frame>
 
-                <Label
-                    FontSize="17"
-                    HorizontalTextAlignment="Center"
-                    TextColor="{StaticResource TextColor}"
-                    Text="Select Unit"></Label>
-
-                <Picker          
-                    WidthRequest="200"
-                    SelectedIndexChanged="Picker_SelectedIndexChanged"/>
-            </VerticalStackLayout>
-        </Grid>
-
-
-        <!--  BOTTOM SECTION -->
-        <Grid Grid.Row="1" BackgroundColor="{StaticResource AppColor4}">
-            <VerticalStackLayout VerticalOptions="Center" Spacing="10">
-
-                <Label
-                    FontSize="100"
-                    HorizontalTextAlignment="Center"
-                    TextColor="{StaticResource TextColor}"
-                    Text="0.00"/>
-
-                <Label
-                     FontSize="17"
-                     HorizontalTextAlignment="Center"
-                     TextColor="{StaticResource TextColor}"
-                     Text="Select Unit"></Label>
-
-                <Picker
-                    WidthRequest="200"
-                    SelectedIndexChanged="Picker_SelectedIndexChanged"/>
-
-            </VerticalStackLayout>
-        </Grid>
-
-    </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
 
 </ContentPage>
